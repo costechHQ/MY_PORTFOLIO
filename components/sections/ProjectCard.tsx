@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { ArrowIcon } from "@/components/ui/Button";
@@ -12,15 +13,28 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
         href={`/projects/${project.slug}`}
         className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-surface transition duration-300 hover:-translate-y-1.5 hover:border-accent-soft hover:shadow-[0_24px_60px_-24px_var(--accent)]"
       >
-        {/* No screenshot yet: a branded gradient tile stands in for the image. */}
-        <div className="relative flex aspect-[16/10] items-end overflow-hidden bg-hero-glow p-5">
-          <span
-            aria-hidden="true"
-            className="font-display text-6xl font-light leading-none tracking-tight text-ink/25 transition group-hover:text-ink/40"
-          >
-            {project.title.slice(0, 2).toUpperCase()}
-          </span>
-        </div>
+        {project.cover ? (
+          <div className="relative aspect-[16/10] overflow-hidden bg-surface-2">
+            <Image
+              src={project.cover.src}
+              alt={project.cover.alt}
+              width={project.cover.width}
+              height={project.cover.height}
+              sizes="(min-width: 768px) 560px, 92vw"
+              className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+            />
+          </div>
+        ) : (
+          /* No screenshot yet: a branded gradient tile stands in for the image. */
+          <div className="relative flex aspect-[16/10] items-end overflow-hidden bg-hero-glow p-5">
+            <span
+              aria-hidden="true"
+              className="font-display text-6xl font-light leading-none tracking-tight text-ink/25 transition group-hover:text-ink/40"
+            >
+              {project.title.slice(0, 2).toUpperCase()}
+            </span>
+          </div>
+        )}
         <div className="flex flex-1 flex-col gap-3 p-5">
           <p className="text-sm text-muted">{project.category}</p>
           <div className="flex items-start justify-between gap-4">
