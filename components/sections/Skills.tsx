@@ -9,8 +9,8 @@ export function Skills() {
       <Container className="flex flex-col gap-12">
         <SectionHeading label={skills.label} title={skills.title} muted={skills.muted} />
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {skills.groups.map((group) => (
-            <SkillGroup key={group.category} {...group} />
+          {skills.groups.map((group, i) => (
+            <SkillGroup key={group.category} {...group} index={i % 3} />
           ))}
         </ul>
       </Container>
