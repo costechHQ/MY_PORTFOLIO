@@ -15,9 +15,12 @@ export function useLocalTime(timeZone: string): string {
         timeZone,
       }).format(new Date());
 
-    setTime(format());
+    const first = setTimeout(() => setTime(format()), 0);
     const id = setInterval(() => setTime(format()), 30_000);
-    return () => clearInterval(id);
+    return () => {
+      clearTimeout(first);
+      clearInterval(id);
+    };
   }, [timeZone]);
 
   return time;
