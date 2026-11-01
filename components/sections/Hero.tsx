@@ -9,7 +9,7 @@ import { TechStrip } from "./TechStrip";
 export function Hero() {
   return (
     <section id="home" className="bg-hero-glow pb-16 pt-28 md:pt-32">
-      <Container className="grid gap-12 lg:grid-cols-[1fr_22rem] lg:items-start">
+      <Container className="grid gap-12 lg:grid-cols-[1fr_28rem] lg:items-center">
         <div className="flex flex-col gap-8">
           <p className="text-sm text-muted">• {profile.title}</p>
           <h1 className="font-display text-6xl font-light leading-[0.95] tracking-tight md:text-8xl">
