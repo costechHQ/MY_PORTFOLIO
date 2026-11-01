@@ -135,3 +135,12 @@ export const education = {
     },
   ],
 } as const;
+
+export const contact = {
+  label: "Contact",
+  title: "Let's build something",
+  muted: "together.",
+  intro:
+    "Have a web or mobile project in mind? Send a message and I'll get back to you by email.",
+  references: "References available on request.",
+} as const;
