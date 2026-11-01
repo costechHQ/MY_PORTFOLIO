@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
+/* Design tokens: blue-white, dark editorial (see docs/DESIGN.md) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #02040a;
+  --surface: #0b1020;
+  --surface-2: #121a30;
+  --border: rgb(255 255 255 / 0.12);
+  --text: #ffffff;
+  --muted: rgb(255 255 255 / 0.5);
+  --accent: #2f6bff;
+  --accent-soft: #6f9bff;
+  --accent-deep: #0b2a8a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--border);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-deep: var(--accent-deep);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-face), var(--font-inter), ui-sans-serif, sans-serif;
+
+  --radius-card: 1.5rem;
+  --radius-pill: 999px;
+
+  --background-image-hero-glow: radial-gradient(
+    ellipse at 70% 0%,
+    #2f6bff 0%,
+    #0b2a8a 35%,
+    #02040a 75%
+  );
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
 }
