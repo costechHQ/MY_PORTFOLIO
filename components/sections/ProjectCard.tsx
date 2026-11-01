@@ -1,14 +1,16 @@
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { ArrowIcon } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 import { Tag } from "@/components/ui/Tag";
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project, index = 0 }: { project: Project; index?: number }) {
   return (
     <li>
+      <Reveal index={index} className="h-full">
       <Link
         href={`/projects/${project.slug}`}
-        className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-surface transition hover:border-accent-soft"
+        className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-surface transition duration-300 hover:-translate-y-1.5 hover:border-accent-soft hover:shadow-[0_24px_60px_-24px_var(--accent)]"
       >
         {/* No screenshot yet: a branded gradient tile stands in for the image. */}
         <div className="relative flex aspect-[16/10] items-end overflow-hidden bg-hero-glow p-5">
@@ -37,6 +39,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </ul>
         </div>
       </Link>
+      </Reveal>
     </li>
   );
 }

@@ -19,8 +19,8 @@ export function Work() {
           </Button>
         </div>
         <ul className="grid gap-5 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+          {projects.map((project, i) => (
+            <ProjectCard key={project.slug} project={project} index={i % 2} />
           ))}
         </ul>
       </Container>
