@@ -21,7 +21,8 @@ export default function Styleguide() {
   return (
     <>
       <Head>
-        <title>Christopher Onyedika Simon | Full-Stack Software Engineer</title>
+        <title>Styleguide | Christopher Onyedika Simon</title>
+        <meta name="robots" content="noindex" />
       </Head>
       <main className="min-h-screen bg-hero-glow px-6 py-16 md:px-16">
         <p className="text-sm text-muted">• Design tokens</p>

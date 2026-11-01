@@ -1,6 +1,6 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
-import Head from "next/head";
 import Link from "next/link";
+import { Seo } from "@/components/Seo";
 import { getProject, projects, type Project } from "@/data/projects";
 import { profile } from "@/data/content";
 import { Button } from "@/components/ui/Button";
@@ -23,10 +23,11 @@ export const getStaticProps: GetStaticProps<{ project: Project }, { slug: string
 export default function ProjectPage({ project }: { project: Project }) {
   return (
     <>
-      <Head>
-        <title>{`${project.title} | ${profile.name}`}</title>
-        <meta name="description" content={project.summary} />
-      </Head>
+      <Seo
+        title={`${project.title} | ${profile.name}`}
+        description={project.summary}
+        path={`/projects/${project.slug}`}
+      />
       <main className="bg-hero-glow pb-24 pt-32">
         <Container className="flex max-w-4xl flex-col gap-8">
           <Link href="/#work" className="text-sm text-muted transition hover:text-ink">
