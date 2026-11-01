@@ -5,6 +5,7 @@ import { getProject, projects, type Project } from "@/data/projects";
 import { profile } from "@/data/content";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { ProjectGallery } from "@/components/sections/ProjectGallery";
 import { Tag } from "@/components/ui/Tag";
 
 export const getStaticPaths: GetStaticPaths = () => ({
@@ -57,6 +58,7 @@ export default function ProjectPage({ project }: { project: Project }) {
               </Button>
             )}
           </div>
+          {project.screens && <ProjectGallery screens={project.screens} />}
         </Container>
       </main>
     </>
