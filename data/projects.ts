@@ -4,6 +4,16 @@
  * technologies stated in those descriptions or shown as the repo language.
  */
 
+export type Screenshot = {
+  src: string;
+  alt: string;
+  caption: string;
+  device: "desktop" | "phone";
+  /** Real pixel size of the file, so the page doesn't shift while it loads. */
+  width: number;
+  height: number;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -11,6 +21,9 @@ export type Project = {
   summary: string;
   tags: readonly string[];
   links: { live?: string; source?: string };
+  /** Image shown on the project card (falls back to a gradient tile). */
+  cover?: Screenshot;
+  screens?: readonly Screenshot[];
 };
 
 export const projectsSection = {
@@ -55,6 +68,64 @@ export const projects: readonly Project[] = [
       "Secure school pickup verification for authorized child collection, daily pickup codes, release tracking, and real-time security alerts.",
     tags: ["Python"],
     links: { source: "https://github.com/costechHQ/PIKVA" },
+    cover: {
+      src: "/images/pikva-home-desktop.png",
+      alt: "PIKVA home page: the headline 'Send every child home with the right person' beside a photo of three pupils reading",
+      caption: "Home page",
+      device: "desktop",
+      width: 1425,
+      height: 2831,
+    },
+    screens: [
+      {
+        src: "/images/pikva-home-desktop.png",
+        alt: "PIKVA home page on desktop, with sections for what Pikva does, parents, and how it works",
+        caption: "Home page (desktop)",
+        device: "desktop",
+        width: 1425,
+        height: 2831,
+      },
+      {
+        src: "/images/pikva-login-desktop.png",
+        alt: "PIKVA sign-in screen on desktop with email and password fields",
+        caption: "Sign in (desktop)",
+        device: "desktop",
+        width: 1440,
+        height: 900,
+      },
+      {
+        src: "/images/pikva-forgot-password-desktop.png",
+        alt: "PIKVA forgot-password screen on desktop with an email field and a reset link button",
+        caption: "Forgot password (desktop)",
+        device: "desktop",
+        width: 1440,
+        height: 900,
+      },
+      {
+        src: "/images/pikva-home-phone.png",
+        alt: "PIKVA home page on a phone, stacked into a single column",
+        caption: "Home page (phone)",
+        device: "phone",
+        width: 780,
+        height: 9026,
+      },
+      {
+        src: "/images/pikva-login-phone.png",
+        alt: "PIKVA sign-in screen on a phone",
+        caption: "Sign in (phone)",
+        device: "phone",
+        width: 780,
+        height: 1688,
+      },
+      {
+        src: "/images/pikva-forgot-password-phone.png",
+        alt: "PIKVA forgot-password screen on a phone",
+        caption: "Forgot password (phone)",
+        device: "phone",
+        width: 780,
+        height: 1688,
+      },
+    ],
   },
 ];
 
