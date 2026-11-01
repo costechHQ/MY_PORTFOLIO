@@ -20,3 +20,6 @@ next-env.d.ts
 
 # private source documents (not published)
 CHRISTOPHER_ONYEDIKA_SIMON_CV.pdf
+
+# design reference (local only)
+Screen Recording*.mp4
