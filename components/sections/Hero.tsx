@@ -1,5 +1,6 @@
 import { hero, profile, stats } from "@/data/content";
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 import { HeroActions } from "./HeroActions";
 import { ProfileCard } from "./ProfileCard";
 import { SkillTags } from "./SkillTags";
@@ -17,11 +18,17 @@ export function Hero() {
           </h1>
           <SkillTags tags={hero.tags} />
           <div className="flex flex-wrap gap-4">
-            <StatCard value={stats[0].value} label={stats[0].label} tone="light" />
-            <StatCard value={stats[1].value} label={stats[1].label} tone="glass" />
+            <Reveal index={2}>
+              <StatCard value={stats[0].value} label={stats[0].label} tone="light" />
+            </Reveal>
+            <Reveal index={3}>
+              <StatCard value={stats[1].value} label={stats[1].label} tone="glass" />
+            </Reveal>
           </div>
         </div>
-        <ProfileCard />
+        <Reveal index={1} y={48}>
+          <ProfileCard />
+        </Reveal>
       </Container>
 
       <Container className="mt-16 flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
