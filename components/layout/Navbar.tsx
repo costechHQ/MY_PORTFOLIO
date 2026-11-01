@@ -36,7 +36,7 @@ const icons: Record<NavId, ReactNode> = {
       <path d="M4 21c0-4 3.6-6 8-6s8 2 8 6" />
     </svg>
   ),
-  services: (
+  skills: (
     <svg {...svgProps}>
       <path d="M4 6h16M4 12h16M4 18h10" />
     </svg>
