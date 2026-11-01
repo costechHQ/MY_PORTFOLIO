@@ -14,6 +14,14 @@ export type Screenshot = {
   height: number;
 };
 
+export type ProjectVideo = {
+  src: string;
+  poster: string;
+  caption: string;
+  width: number;
+  height: number;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -24,6 +32,8 @@ export type Project = {
   /** Image shown on the project card (falls back to a gradient tile). */
   cover?: Screenshot;
   screens?: readonly Screenshot[];
+  /** Screen-recorded walkthrough, played on the detail page. */
+  video?: ProjectVideo;
 };
 
 export const projectsSection = {
@@ -41,6 +51,21 @@ export const projects: readonly Project[] = [
       "E-commerce platform built end to end, from the ground up, focused on quality products and a strong customer experience.",
     tags: ["E-commerce"],
     links: { live: "https://dixtron.co.uk" },
+    cover: {
+      src: "/images/dixtron-cover.jpg",
+      alt: "Dixtron website home page with a Back-Up banner and the headline 'Transform Your Business'",
+      caption: "Home page",
+      device: "desktop",
+      width: 1364,
+      height: 600,
+    },
+    video: {
+      src: "/videos/dixtron-walkthrough.mp4",
+      poster: "/images/dixtron-cover.jpg",
+      caption: "Walkthrough of the live site: home, about, services, store products and contact.",
+      width: 1280,
+      height: 564,
+    },
   },
   {
     slug: "ibackhome",
