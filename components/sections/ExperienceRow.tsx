@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/ui/Reveal";
 import { Tag } from "@/components/ui/Tag";
 
 type ExperienceRowProps = {
@@ -10,6 +11,7 @@ type ExperienceRowProps = {
 export function ExperienceRow({ company, role, period, details }: ExperienceRowProps) {
   return (
     <li className="border-b border-line py-6 first:border-t">
+      <Reveal y={20}>
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-sm text-muted">{company}</p>
@@ -24,6 +26,7 @@ export function ExperienceRow({ company, role, period, details }: ExperienceRowP
           <li key={d}>{d}</li>
         ))}
       </ul>
+      </Reveal>
     </li>
   );
 }

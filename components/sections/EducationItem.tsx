@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/ui/Reveal";
 import { Tag } from "@/components/ui/Tag";
 
 type EducationItemProps = {
@@ -10,6 +11,7 @@ type EducationItemProps = {
 export function EducationItem({ title, institution, period, note }: EducationItemProps) {
   return (
     <li className="border-b border-line py-6 first:border-t">
+      <Reveal y={20}>
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-sm text-muted">{institution}</p>
@@ -20,6 +22,7 @@ export function EducationItem({ title, institution, period, note }: EducationIte
           {period}
         </Tag>
       </div>
+      </Reveal>
     </li>
   );
 }
