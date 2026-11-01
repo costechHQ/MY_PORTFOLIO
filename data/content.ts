@@ -34,3 +34,32 @@ export const navItems = [
 ] as const;
 
 export type NavId = (typeof navItems)[number]["id"];
+
+/** Derived only from facts stated in the CV. Edit freely. */
+export const hero = {
+  headline: "Building web apps",
+  headlineMuted: "end to end",
+  tags: ["Web Applications", "REST APIs", "Databases", "UI Development"],
+  techStrip: ["React", "Next.js", "TypeScript", "Python", "PostgreSQL", "Tailwind CSS"],
+} as const;
+
+const MEDIA_START_YEAR = 2015; // Church & Event Media, 2015 - Present
+const ENGINEERING_START_YEAR = 2023; // Freelance Full-Stack Engineer, 2023 - Present
+
+export const stats = [
+  {
+    value: `${new Date().getFullYear() - MEDIA_START_YEAR}+`,
+    label: "Years in media production",
+  },
+  {
+    value: String(ENGINEERING_START_YEAR),
+    label: "Building full-stack apps since",
+  },
+] as const;
+
+export const about = {
+  label: "About Me",
+  title: "Works from the problem outward,",
+  muted: "choosing the simplest architecture that holds up.",
+  languages: "English (Fluent) • Igbo (Native)",
+} as const;
