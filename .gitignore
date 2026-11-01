@@ -28,3 +28,4 @@ Screen Recording*.mp4
 /build
 *.pem
 npm-debug.log*
+/dixtron.mp4
