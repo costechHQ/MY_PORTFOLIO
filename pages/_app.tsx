@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { Layout } from "@/components/layout/Layout";
 import { Inter, Inter_Tight } from "next/font/google";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
@@ -12,7 +13,9 @@ const display = Inter_Tight({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${inter.variable} ${display.variable} font-sans`}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </div>
   );
 }
