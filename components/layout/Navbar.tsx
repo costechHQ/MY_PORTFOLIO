@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { navItems, profile, type NavId } from "@/data/content";
 import { cn } from "@/lib/cn";
 import { useActiveSection } from "@/lib/useActiveSection";
@@ -54,12 +54,20 @@ export function Navbar() {
   const active = useActiveSection(sectionIds);
   const time = useLocalTime(profile.timeZone);
 
+  // Close the mobile menu with Escape.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-8">
       <div className="relative mx-auto flex max-w-7xl items-center justify-between">
         <Link
           href="/#home"
-          aria-label={`${profile.name} - home`}
+          aria-label={`${profile.initials} - ${profile.name} home`}
           className="flex h-11 w-11 items-center justify-center rounded-full bg-ink text-sm font-semibold text-bg"
         >
           {profile.initials}
