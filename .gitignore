@@ -23,3 +23,8 @@ CHRISTOPHER_ONYEDIKA_SIMON_CV.pdf
 
 # design reference (local only)
 Screen Recording*.mp4
+
+/coverage
+/build
+*.pem
+npm-debug.log*
