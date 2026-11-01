@@ -129,11 +129,6 @@ export const education = {
   muted: "formally and by building.",
   items: [
     {
-      title: "Hackathon 3.0 Bootcamp – Software Engineering & AI Full-Stack Engineering",
-      institution: "Africaplan Foundation",
-      period: "Jul – Nov 2026",
-    },
-    {
       title: "B.Eng. Computer Engineering",
       institution: "Enugu State University of Science and Technology (ESUT)",
       period: "2018 – 2023",
