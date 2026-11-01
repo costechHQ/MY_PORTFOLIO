@@ -37,10 +37,11 @@ export type NavId = (typeof navItems)[number]["id"];
 
 /** Derived only from facts stated in the CV. Edit freely. */
 export const hero = {
-  headline: "Building web apps",
+  headline: "Building web & mobile apps",
   headlineMuted: "end to end",
-  tags: ["Web Applications", "REST APIs", "Databases", "UI Development"],
-  techStrip: ["React", "Next.js", "TypeScript", "Python", "PostgreSQL", "Tailwind CSS"],
+  tags: ["Web Applications", "Mobile Apps", "REST APIs", "Databases", "UI Development"],
+  // Flutter and Dart are not in the CV yet; added at the owner's request.
+  techStrip: ["React", "Next.js", "TypeScript", "Python", "Flutter", "Dart", "PostgreSQL"],
 } as const;
 
 const MEDIA_START_YEAR = 2015; // Church & Event Media, 2015 - Present
