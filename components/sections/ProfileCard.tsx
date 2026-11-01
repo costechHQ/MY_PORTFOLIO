@@ -22,7 +22,7 @@ export function ProfileCard() {
         width={864}
         height={1080}
         priority
-        sizes="(min-width: 1024px) 448px, 92vw"
+        sizes="(min-width: 1024px) 448px, (min-width: 768px) 304px, 92vw"
         className="aspect-[4/5] w-full object-cover"
       />
       <div className="p-5">
