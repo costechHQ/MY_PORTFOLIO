@@ -16,8 +16,8 @@ const swatches = [
   { name: "muted", className: "bg-muted" },
 ];
 
-// Temporary token preview; replaced by the real homepage in Phase 3.
-export default function Home() {
+// Design token and primitive preview at /styleguide.
+export default function Styleguide() {
   return (
     <>
       <Head>
