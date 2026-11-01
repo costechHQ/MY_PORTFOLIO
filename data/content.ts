@@ -76,7 +76,6 @@ export const experience = {
       period: "2023 – Present",
       details: [
         "Design, build and maintain web applications end to end, covering interface, API, database and authentication.",
-        "Developed and maintain Dixtron (dixtron.co.uk), an e-commerce platform, from the ground up with a focus on product quality and customer experience.",
         "Document the problem, architecture, trade-offs and lessons learned for each project in public repositories.",
       ],
     },
