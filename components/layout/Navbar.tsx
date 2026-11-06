@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, type ReactNode } from "react";
 import { navItems, profile, type NavId } from "@/data/content";
@@ -68,9 +69,16 @@ export function Navbar() {
         <Link
           href="/#home"
           aria-label={`${profile.initials} - ${profile.name} home`}
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-ink text-sm font-semibold text-bg"
+          className="relative block h-11 w-11 overflow-hidden rounded-full bg-ink"
         >
-          {profile.initials}
+          <Image
+            src="/images/avatar.jpg"
+            alt=""
+            width={128}
+            height={128}
+            sizes="44px"
+            className="h-full w-full object-cover"
+          />
         </Link>
 
         <nav
