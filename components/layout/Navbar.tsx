@@ -69,7 +69,7 @@ export function Navbar() {
         <Link
           href="/#home"
           aria-label={`${profile.initials} - ${profile.name} home`}
-          className="relative block h-11 w-11 overflow-hidden rounded-full bg-ink"
+          className="relative block h-11 w-11 overflow-hidden rounded-full bg-ink ring-2 ring-white"
         >
           <Image
             src="/images/avatar.jpg"
