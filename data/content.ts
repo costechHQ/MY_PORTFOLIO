@@ -8,10 +8,10 @@ export const profile = {
   shortName: "Christopher Simon",
   initials: "CS",
   title: "Full-Stack Software Engineer",
-  location: "Enugu, Nigeria",
+  location: "Abuja, Nigeria",
   timeZone: "Africa/Lagos",
   phone: "+234 703 230 3470",
-  email: "cosimon.tech@gmail.com",
+  email: "support@cosimon.site",
   summary:
     "Full-stack software engineer with experience building web applications end to end—interface, API, database and authentication. Works from the problem outward: chooses the simplest architecture that holds up and ships maintainable, well-documented code. Proficient across the JavaScript and Python ecosystems, with a focus on quality, readability and iterative improvement.",
 } as const;
