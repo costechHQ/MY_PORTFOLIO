@@ -11,13 +11,13 @@ export function Hero() {
   return (
     <section id="home" className="bg-hero-glow pb-16 pt-28 md:pt-32">
       <Container className="grid items-center gap-8 md:grid-cols-[1fr_19rem] md:gap-10 lg:grid-cols-[1fr_28rem] lg:gap-12">
-        <div className="flex flex-col gap-8">
+        <div className="contents md:flex md:flex-col md:gap-8">
           <p className="text-sm text-muted">• {profile.title}</p>
           <h1 className="font-display text-5xl font-light leading-[0.95] tracking-tight md:text-5xl lg:text-7xl xl:text-8xl">
             {hero.headline} <span className="text-muted">{hero.headlineMuted}</span>
           </h1>
           <SkillTags tags={hero.tags} />
-          <div className="flex flex-wrap gap-4">
+          <div className="order-last grid grid-cols-2 gap-4 md:order-none md:flex md:flex-wrap">
             <Reveal index={2}>
               <StatCard value={stats[0].value} label={stats[0].label} tone="light" />
             </Reveal>

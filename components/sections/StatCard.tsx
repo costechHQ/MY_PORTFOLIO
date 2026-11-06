@@ -11,7 +11,7 @@ export function StatCard({ value, label, tone = "light" }: StatCardProps) {
   return (
     <div
       className={cn(
-        "flex h-36 w-44 flex-col justify-between rounded-2xl p-4",
+        "flex h-36 w-full flex-col md:w-44 justify-between rounded-2xl p-4",
         tone === "light"
           ? "bg-ink text-bg"
           : "border border-line bg-white/10 text-ink backdrop-blur",
