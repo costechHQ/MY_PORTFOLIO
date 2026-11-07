@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, type ReactNode } from "react";
 import { navItems, profile, type NavId } from "@/data/content";
@@ -66,21 +65,6 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-8">
       <div className="relative mx-auto flex max-w-7xl items-center justify-between">
-        <Link
-          href="/#home"
-          aria-label={`${profile.initials} - ${profile.name} home`}
-          className="relative block h-11 w-11 overflow-hidden rounded-full bg-ink ring-2 ring-white"
-        >
-          <Image
-            src="/images/avatar.jpg"
-            alt=""
-            width={128}
-            height={128}
-            sizes="44px"
-            className="h-full w-full object-cover"
-          />
-        </Link>
-
         <nav
           aria-label="Primary"
           className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 rounded-pill border border-line bg-surface/70 p-1.5 backdrop-blur md:flex"
@@ -104,7 +88,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-3">
           <p className="hidden text-xs text-muted lg:block">
             {profile.location.split(",")[0]}, NG {time}
           </p>
